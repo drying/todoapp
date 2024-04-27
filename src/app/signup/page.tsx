@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Header from "../component/Header";
 
 export default function Signup() {
   return (
     <>
-      <Header leftMenu="ログイン" rightMenu="新規登録" />
+      <Header title="HOME" leftMenu="ログイン" rightMenu="新規登録" />
       <div className="flex min-h-full flex-col items-center px-6 py-12">
         <div>
           <h1 className="text-2xl text-center mb-4">Todoアプリ</h1>

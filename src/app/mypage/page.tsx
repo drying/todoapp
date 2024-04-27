@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Header from "../component/Header";
 
 export default function Mypage() {
   return (
     <>
-      <Header leftMenu="ToDo" rightMenu="ユーザー情報" />
+      <Header title="マイページ" leftMenu="ToDo" rightMenu="ユーザー情報" />
 
       <div className="flex justify-around min-h-screen bg-gray-200 pt-6 px-6">
         <h2 className="text-4xl font-bold text-gray-700">User</h2>
