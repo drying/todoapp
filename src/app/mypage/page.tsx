@@ -1,20 +1,10 @@
 import Link from "next/link";
+import Header from "../component/Header";
 
 export default function Mypage() {
   return (
     <>
-      <div className="flex min-h-full items-center px-6 py-12 bg-gray-900 text-white">
-        <div className="flex-1">
-          <Link href="/mypage" className="text-2xl">
-            マイページ
-          </Link>
-        </div>
-        <div className="flex space-x-10">
-          <Link href="/mypage/todo">Todo</Link>
-          <Link href="/mypage/user">ユーザー情報</Link>
-          <Link href="/">ログアウト</Link>
-        </div>
-      </div>
+      <Header leftMenu="ToDo" rightMenu="ユーザー情報" />
 
       <div className="flex justify-around min-h-screen bg-gray-200 pt-6 px-6">
         <h2 className="text-4xl font-bold text-gray-700">User</h2>
