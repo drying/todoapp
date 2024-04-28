@@ -9,7 +9,7 @@ export default function Login() {
       <div className="flex min-h-full flex-col items-center px-6 py-12">
         <Title title="ログイン" />
 
-        <div className="flex flex-col border p-8">
+        <form className="flex flex-col border p-8">
           <div className="pb-4">
             <label className="block text-sm font-medium">Email address</label>
             <input
@@ -39,7 +39,7 @@ export default function Login() {
               ログイン
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );
