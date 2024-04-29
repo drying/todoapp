@@ -24,13 +24,17 @@ export default function Header(props: {
             <>
               <Link href="/login">{props.leftMenu}</Link>
               <Link href="/signup">{props.rightMenu}</Link>
-              <Link href="/">ログアウト</Link>
+              <form action="/logout" method="post">
+                <button type="submit">ログアウト</button>
+              </form>
             </>
           ) : (
             <>
               <Link href="/mypage/todo">{props.leftMenu}</Link>
               <Link href="/mypage/user">{props.rightMenu}</Link>
-              <Link href="/">ログアウト</Link>
+              <form action="/logout" method="post">
+                <button type="submit">ログアウト</button>
+              </form>
             </>
           )}
         </div>
