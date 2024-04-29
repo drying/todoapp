@@ -1,25 +1,23 @@
+import { createClient } from "../../../utils/supabase/server";
 import Header from "../component/Header";
+import TodoList from "../component/TodoList";
+import UserInformation from "../component/userInformation";
 
-export default function Mypage() {
+export default async function Mypage() {
+  // const supabase = createClient();
+  // // 以下を使ってログイン情報を取得して表示させる
+  // const {
+  //   data: { user },
+  // } = await supabase.auth.getUser();
+
   return (
     <>
       <Header title="マイページ" leftMenu="ToDo" rightMenu="ユーザー情報" />
 
       <div className="flex justify-around min-h-screen bg-gray-200 pt-6 px-6">
-        <h2 className="text-4xl font-bold text-gray-700">User</h2>
-        <div className="w-full max-w-xl">
-          <div className="w-full px-8 py-6 bg-white shadow-md rounded-lg">
-            <p>Yuki Matsumoto</p>
-            <p>user ID: 1</p>
-            <p>最終ログイン: 2024/4/24 12:00</p>
-          </div>
-        </div>
+        <UserInformation />
         <h2 className="text-4xl font-bold text-gray-700">Todo</h2>
-        <div className="w-full max-w-xl">
-          <div className="w-full px-8 py-6 bg-white shadow-md rounded-lg">
-            <p>Todo</p>
-          </div>
-        </div>
+        <TodoList />
       </div>
     </>
   );
