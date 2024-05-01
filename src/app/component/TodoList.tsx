@@ -1,22 +1,32 @@
-import { createClient } from "../../../utils/supabase/server";
-
 export default async function TodoList() {
-  const supabase = createClient();
-  // 以下を使ってログイン情報を取得して表示させる
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
   return (
     <>
-      <div className="w-full max-w-xl">
-        <div className="w-full px-8 py-6 mb-4 bg-white shadow-md rounded-lg">
-          <p>買い物</p>
-        </div>
-        <div className="w-full px-8 py-6 mb-4 bg-white shadow-md rounded-lg">
-          <p>買い物</p>
-        </div>
-      </div>
+      <form className="w-full max-w-xl">
+        <ul className="space-y-3">
+          <div className="flex justify-between space-x-4 p-4 items-center bg-white shadow-md rounded-lg">
+            <li className="text-gray-700">買い物</li>
+            <div className="flex space-x-2">
+              <button className="px-3 py-2 bg-red-400 text-gray-100 text-sm shadow-md">
+                削除
+              </button>
+              <button className="px-3 py-2 bg-blue-400 text-gray-100 text-sm shadow-md">
+                編集
+              </button>
+            </div>
+          </div>
+          <li className="flex justify-between space-x-4 p-4 items-center bg-white shadow-md rounded-lg">
+            <span className="text-gray-700">買い物</span>
+            <div className="flex space-x-2">
+              <button className="px-3 py-2 bg-red-400 text-gray-100 text-sm shadow-md">
+                削除
+              </button>
+              <button className="px-3 py-2 bg-blue-400 text-gray-100 text-sm shadow-md">
+                編集
+              </button>
+            </div>
+          </li>
+        </ul>
+      </form>
     </>
   );
 }
