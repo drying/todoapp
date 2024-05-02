@@ -4,15 +4,20 @@ import Header from "@/app/component/Header";
 import TodoList from "@/app/component/TodoList";
 import { useEffect, useState } from "react";
 import { getAllTodos } from "../../../../utils/supabase/supabaseFunc";
+import { Task } from "../../../../utils/interface";
+
 // user idをテーブルに追加して、それに紐づくTodoを表示するようにリファクタリングする
 export default function Todo() {
-  const [tasks, setTasks] = useState<any>([]);
-  // taskの状態が変わったらTodoListを再描画するように変更する
+  const [tasks, setTasks] = useState<Task[]>([]);
+
   useEffect(() => {
     const getTodos = async () => {
       const tasks = await getAllTodos();
-      setTasks(tasks);
-      // console.log(tasks);
+      if (tasks) {
+        setTasks(tasks);
+      } else {
+        setTasks([]);
+      }
     };
     getTodos();
   }, []);
