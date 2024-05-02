@@ -1,4 +1,7 @@
-export default async function TodoList() {
+export default function TodoList(props: any) {
+  console.log(`tasksの取得`);
+  const { tasks } = props;
+  console.log(tasks);
   return (
     <>
       <form className="w-full max-w-xl">
