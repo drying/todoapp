@@ -13,11 +13,11 @@ export default async function Mypage() {
   return (
     <>
       <Header title="マイページ" leftMenu="ToDo" rightMenu="ユーザー情報" />
-
-      <div className="flex justify-around min-h-screen bg-gray-200 pt-6 px-6">
+      <div className="flex flex-col justify-start min-h-screen bg-gray-200 pt-6 px-6">
+        {/* ようこそ「ユーザー情報」さんに変更 */}
         <UserInformation />
-        <h2 className="text-4xl font-bold text-gray-700">Todo</h2>
-        <TodoList />
+        {/* <h2 className="text-4xl font-bold text-gray-700">Todo</h2>
+        <TodoList /> */}
       </div>
     </>
   );
