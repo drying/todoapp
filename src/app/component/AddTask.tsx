@@ -1,7 +1,12 @@
 import { FormEvent, useState } from "react";
 import { addTodo, getAllTodos } from "../../../utils/supabase/supabaseFunc";
 
-export default function AddTask() {
+type Props = {
+  getTodos: () => void;
+};
+
+export default function AddTask(props: Props) {
+  const { getTodos } = props;
   const [title, setTitle] = useState<string>("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -11,8 +16,7 @@ export default function AddTask() {
       return;
     }
     await addTodo(title);
-    // Todoを呼び出して画面更新するように変更
-    await getAllTodos();
+    getTodos(); // Todoを呼び出して画面更新する
     setTitle("");
   };
 
