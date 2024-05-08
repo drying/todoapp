@@ -27,12 +27,17 @@ export default function TodoList(props: Props) {
               <li className="text-gray-700">{task.title}</li>
               <div className="flex space-x-2">
                 <button
+                  type="button"
                   onClick={() => onClickDelete(task.id)}
                   className="px-3 py-2 bg-red-400 text-gray-100 text-sm shadow-md"
                 >
                   削除
                 </button>
-                <button className="px-3 py-2 bg-blue-400 text-gray-100 text-sm shadow-md">
+                <button
+                  type="button"
+                  onClick={() => alert("編集")}
+                  className="px-3 py-2 bg-blue-400 text-gray-100 text-sm shadow-md"
+                >
                   編集
                 </button>
               </div>
