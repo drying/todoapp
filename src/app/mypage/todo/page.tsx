@@ -11,17 +11,24 @@ export default function Todo() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   const getTodos = useCallback(async () => {
-    const tasks = await getAllTodos();
-    if (tasks) {
-      setTasks(tasks);
-    } else {
-      setTasks([]);
+    const getTasks = await getAllTodos();
+    if (getTasks !== null) {
+      setTasks(getTasks);
     }
   }, []);
+  // const getTodos = useCallback(async () => {
+  //   const getTasks = await getAllTodos();
+  //   if (
+  //     getTasks !== null &&
+  //     JSON.stringify(tasks) !== JSON.stringify(getTasks)
+  //   ) {
+  //     setTasks(getTasks);
+  //   }
+  // }, []);
 
   useEffect(() => {
     getTodos();
-  }, [getTodos]);
+  }, []);
 
   return (
     <>
