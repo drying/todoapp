@@ -16,15 +16,6 @@ export default function Todo() {
       setTasks(getTasks);
     }
   }, []);
-  // const getTodos = useCallback(async () => {
-  //   const getTasks = await getAllTodos();
-  //   if (
-  //     getTasks !== null &&
-  //     JSON.stringify(tasks) !== JSON.stringify(getTasks)
-  //   ) {
-  //     setTasks(getTasks);
-  //   }
-  // }, []);
 
   useEffect(() => {
     getTodos();

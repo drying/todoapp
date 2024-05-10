@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { addTodo, getAllTodos } from "../../../utils/supabase/supabaseFunc";
+import { addTodo } from "../../../utils/supabase/supabaseFunc";
 
 type Props = {
   getTodos: () => void;
