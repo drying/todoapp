@@ -1,6 +1,16 @@
+import { createClient } from "./client";
 import { supabase } from "./supabase";
 
 // userIDも取得して、ToDO取得や追加、削除、編集、完了にも追加でデータを送ればいいかも
+
+// user_ID取得
+export const getUserID = async () => {
+  const supabaseID = createClient();
+  const {
+    data: { user },
+  } = await supabaseID.auth.getUser();
+  return user?.id;
+};
 
 // すべてのtodoを取得
 export const getAllTodos = async () => {
@@ -9,8 +19,8 @@ export const getAllTodos = async () => {
 };
 // ToDoを追加
 //ToDo user_idを取得して引数に追加する
-export const addTodo = async (title: string) => {
-  await supabase.from("tasks").insert({ title: title }).select();
+export const addTodo = async (id: string, title: string) => {
+  await supabase.from("tasks").insert({ user_id: id, title: title }).select();
 };
 
 // Todoを削除

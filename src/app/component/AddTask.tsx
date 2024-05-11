@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { addTodo } from "../../../utils/supabase/supabaseFunc";
+import { addTodo, getUserID } from "../../../utils/supabase/supabaseFunc";
 
 type Props = {
   getTodos: () => void;
@@ -15,7 +15,11 @@ export default function AddTask(props: Props) {
       alert("タイトルを入力してください");
       return;
     }
-    await addTodo(title);
+    const userID = await getUserID();
+    console.log(userID);
+    if (userID) {
+      await addTodo(userID, title);
+    }
     getTodos(); // Todoを呼び出して画面更新する
     setTitle("");
   };
