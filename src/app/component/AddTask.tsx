@@ -15,10 +15,9 @@ export default function AddTask(props: Props) {
       alert("タイトルを入力してください");
       return;
     }
-    const userID = await getUserID();
-    console.log(userID);
-    if (userID) {
-      await addTodo(userID, title);
+    const user_id = await getUserID();
+    if (user_id) {
+      await addTodo(user_id, title);
     }
     getTodos(); // Todoを呼び出して画面更新する
     setTitle("");
